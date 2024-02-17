@@ -9,9 +9,10 @@ public class Auto {
 	int registro;
 	static int CantidadCreados;
 	
-	int cantidadAsientos(Asiento[] asientos) {
+	int cantidadAsientos() {
 		int cantidad;
-		cantidad= this.asientos.length;	
+		Asiento[] lista= this.asientos;
+		cantidad=lista.length;
 		return cantidad;
 	}
 	
