@@ -18,9 +18,11 @@ public class Auto {
 	
 	
 	String verificarIntegridad() {
-		int x=this.registro;
 		String mensaje;
-		if (registro !=x) {
+		if(this instanceof Auto) {
+			int registro=this.registro;
+		}
+		if (registro != (this.registro)) {
 			mensaje="Las piezas no son originales";
 		}else {
 			mensaje="Auto original";
