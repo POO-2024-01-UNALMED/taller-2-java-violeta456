@@ -10,24 +10,33 @@ public class Auto {
 	static int CantidadCreados;
 	
 	int cantidadAsientos() {
-		int cantidad;
-		Asiento[] lista= this.asientos;
-		cantidad=lista.length;
+		int cantidad = 0;
+		for(int i=0; i<asientos.length;i++) {
+			if (asientos[i] !=null) {
+				cantidad++;
+			}
+		}
 		return cantidad;
 	}
 	
 	
 	String verificarIntegridad() {
 		String mensaje;
-		if(this instanceof Auto) {
-			int registro=this.registro;
+		int a=registro;
+		int b=this.motor.registro;
+		
+		if(a==b) {
+			for(int i=0; i<asientos.length;i++) {
+				if (asientos[i] !=null) {
+					int c=asientos[i].registro;
+					if(c!=b || c!=a) {
+						return mensaje="Las piezas no son originales"; }//fin if
+				} 
+		} 
+			return mensaje="Auto original";		
 		}
-		if (registro != (this.registro)) {
-			mensaje="Las piezas no son originales";
-		}else {
-			mensaje="Auto original";
-		}
-		return mensaje;
+		return mensaje="Las piezas no son originales";
+
 	}
 	
 
